@@ -1,0 +1,16 @@
+{
+  "name": "practise-assesment",
+  "version": "1.0.0",
+  "description": "Program implementation for practical work No. 5",
+  "main": "index.js",
+  "scripts": {
+    "test": "mocha"
+  },
+  "type": "module",
+  "author": "holub heorhii",
+  "license": "ISC",
+  "devDependencies": {
+    "chai": "4.5.0",
+    "mocha": "^11.1.0"
+  }
+}
