@@ -3,32 +3,33 @@
 import { expect } from 'chai';
 import handlePassword from '../scripts/passwordValidator/passwordHandler.js';
 
-const passwordLengths = [12, 20, 50, 100, 250, 500, 1000];
-    function generatePassword(length, type = 'small') {
-      let chars = '';
-      switch(type) {
-        case 'small':
-          chars = 'abcdefghijklmnopqrstuvwxyz';
-          break;
-        case 'big':
-          chars = 'ABCDEFGHIJKLMNOPQRSTUVWXYZ';
-          break;
-        case 'numbers':
-          chars = '0123456789';
-          break;
-        case 'symbols':
-          chars = '!№;%:_';
-          break;
-        default:
-          chars = 'abcdefghijklmnopqrstuvwxyz';
-      }
-      
-      let result = '';
-      for (let i = 0; i < length; i++) {
-        result += chars.charAt(Math.floor(Math.random() * chars.length));
-      }
-      return result;
-    }
+const passwordLengths = [12, 20, 50, 100, 250, 500, 1000, 5000];
+
+function generatePassword(length, type = 'small') {
+  let chars = '';
+  switch(type) {
+    case 'small':
+      chars = 'abcdefghijklmnopqrstuvwxyz';
+      break;
+    case 'big':
+      chars = 'ABCDEFGHIJKLMNOPQRSTUVWXYZ';
+      break;
+    case 'numbers':
+      chars = '0123456789';
+      break;
+    case 'symbols':
+      chars = '!№;%:_';
+      break;
+    default:
+      chars = 'abcdefghijklmnopqrstuvwxyz';
+  }
+  
+  let result = '';
+  for (let i = 0; i < length; i++) {
+    result += chars.charAt(Math.floor(Math.random() * chars.length));
+  }
+  return result;
+}
 
 function measureExecutionTime(func) {
     const start = performance.now();

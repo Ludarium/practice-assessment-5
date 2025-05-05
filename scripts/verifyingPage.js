@@ -37,8 +37,7 @@ export function init() {
 
     function setResultVisibility(element) {
         element.classList.remove('show');
-        void element.offsetWidth;  // force styles reload ??? 
-        element.classList.add('show');
+        setTimeout( () => element.classList.add('show'), 0);
     }
 
     function renderResult(element, statusObject) {
